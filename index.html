@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Support — Nick Khapatniukovskyi</title>
+  <meta name="description" content="Support for apps by Nick Khapatniukovskyi." />
+  <style>
+    :root {
+      --navy: #26374A;
+      --blue: #2B59D1;
+      --bg: #FAF9F5;
+      --ink: #333333;
+      --muted: #7D828B;
+      --line: #D6D9DD;
+      --surf: #FFFFFF;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --navy: #2E4566;
+        --blue: #6FA3FF;
+        --bg: #0F1419;
+        --ink: #E8EAED;
+        --muted: #8E94A0;
+        --line: #2C3543;
+        --surf: #1A2330;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 40px 20px 32px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 6px; font-size: 28px; font-weight: 700; }
+    header p { margin: 0; opacity: 0.85; font-size: 16px; }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+    section { margin-bottom: 40px; }
+    h2 {
+      font-size: 22px;
+      margin: 0 0 16px;
+      color: var(--ink);
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 8px;
+    }
+    p, li { font-size: 16px; }
+    .contact-card {
+      background: var(--surf);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .contact-card p { margin: 0 0 16px; color: var(--muted); }
+    .button {
+      display: inline-block;
+      background: var(--blue);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: opacity 0.15s;
+    }
+    .button:hover { opacity: 0.85; }
+    .email-fallback {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .email-fallback code {
+      background: var(--bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+      color: var(--ink);
+      font-size: 14px;
+    }
+    .faq-item {
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+    .faq-a { color: var(--ink); opacity: 0.9; }
+    footer {
+      text-align: center;
+      padding: 24px 20px 40px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer a { color: var(--muted); }
+    .lang-toggle {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 13px;
+    }
+    .lang-toggle a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      padding: 4px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 4px;
+    }
+    .lang-toggle a:hover { background: rgba(255, 255, 255, 0.1); }
+    [lang="fr"] { display: none; }
+    body.fr [lang="en"] { display: none; }
+    body.fr [lang="fr"] { display: block; }
+    body.fr span[lang="fr"], body.fr a[lang="fr"], body.fr code[lang="fr"] { display: inline; }
+  </style>
+</head>
+<body>
+  <header style="position: relative;">
+    <div class="lang-toggle">
+      <a href="#" onclick="toggleLang(); return false;" id="langLink">Français</a>
+    </div>
+    <span lang="en">
+      <h1>App Support</h1>
+      <p>Nick Khapatniukovskyi</p>
+    </span>
+    <span lang="fr">
+      <h1>Soutien</h1>
+      <p>Nick Khapatniukovskyi</p>
+    </span>
+  </header>
+
+  <main>
+
+    <!-- ── ENGLISH ─────────────────────────────────────────────────────── -->
+    <div lang="en">
+      <section>
+        <h2>Contact</h2>
+        <div class="contact-card">
+          <p>For bug reports, feature requests, or general questions, send an email. Replies usually within 1–3 business days.</p>
+          <a class="button" href="#">📧 Contact Support</a>
+          <div class="email-fallback">
+            Or write directly to <code>n.hapatnyukovsky@gmail.com</code>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <div class="faq-q">Is my progress synced across devices?</div>
+          <div class="faq-a">No. All progress is stored locally on your device. The app does not require an account, has no servers, and does not sync data. If you uninstall or switch devices, your progress will not transfer.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How do I reset my progress?</div>
+          <div class="faq-a">Open the Settings screen → tap "Reset Progress" → confirm. This clears all saved progress, results, and preferences.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Are there ads or in-app tracking?</div>
+          <div class="faq-a">No. The app contains no advertising, no analytics, and no tracking of any kind.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">I made an in-app purchase but didn't receive it / I need a refund.</div>
+          <div class="faq-a">All payments are handled by Apple. For payment issues or refund requests, please contact Apple directly at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>. The developer cannot process refunds for App Store purchases.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">The app crashes or behaves unexpectedly. What should I include in my report?</div>
+          <div class="faq-a">Please include: device model (e.g., iPhone 15), iOS version, app version (visible on the About screen), what you were doing when it happened, and a screenshot or screen recording if possible.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Is the app available in French?</div>
+          <div class="faq-a">Some apps support both English and French. Check the Settings screen for a Language option. Where available, all content and UI strings are fully translated.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How is my privacy handled?</div>
+          <div class="faq-a">See the <a href="https://kalapyha.github.io/privacy-policy/" target="_blank" rel="noopener">privacy policy</a>. Short version: no data collection, no analytics, no accounts — all data is stored locally on your device.</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ── FRENCH ──────────────────────────────────────────────────────── -->
+    <div lang="fr">
+      <section>
+        <h2>Contact</h2>
+        <div class="contact-card">
+          <p>Pour signaler un bogue, demander une fonctionnalité ou poser une question, envoyez un courriel. Réponses habituellement sous 1 à 3 jours ouvrables.</p>
+          <a class="button" href="#">📧 Contacter le soutien</a>
+          <div class="email-fallback">
+            Ou écrivez directement à <code>n.hapatnyukovsky@gmail.com</code>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Questions fréquentes</h2>
+
+        <div class="faq-item">
+          <div class="faq-q">Mes progrès sont-ils synchronisés entre appareils ?</div>
+          <div class="faq-a">Non. Tous les progrès sont stockés localement sur votre appareil. L'application ne nécessite pas de compte, n'a pas de serveurs et ne synchronise pas les données. Si vous désinstallez l'application ou changez d'appareil, vos progrès ne seront pas transférés.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Comment réinitialiser mes progrès ?</div>
+          <div class="faq-a">Ouvrez l'écran Paramètres → touchez « Réinitialiser les progrès » → confirmez. Cela efface tous les progrès, résultats et préférences enregistrés.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Y a-t-il de la publicité ou du suivi ?</div>
+          <div class="faq-a">Non. L'application ne contient aucune publicité, aucune analyse et aucun suivi.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">J'ai effectué un achat intégré mais je ne l'ai pas reçu / remboursement ?</div>
+          <div class="faq-a">Tous les paiements sont gérés par Apple. Pour les problèmes de paiement ou les demandes de remboursement, veuillez contacter Apple directement à <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>. Le développeur ne peut pas traiter les remboursements pour les achats de l'App Store.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">L'application plante ou se comporte de manière inattendue. Que dois-je inclure dans mon signalement ?</div>
+          <div class="faq-a">Veuillez inclure : modèle d'appareil (ex. iPhone 15), version iOS, version de l'application (visible dans l'écran À propos), ce que vous faisiez lorsque le problème est survenu, et une capture d'écran ou un enregistrement si possible.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">L'application est-elle disponible en français ?</div>
+          <div class="faq-a">Certaines applications prennent en charge l'anglais et le français. Vérifiez l'écran Paramètres pour une option de langue. Lorsqu'elle est disponible, tout le contenu et les éléments d'interface sont entièrement traduits.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Comment ma vie privée est-elle gérée ?</div>
+          <div class="faq-a">Consultez la <a href="https://kalapyha.github.io/privacy-policy/" target="_blank" rel="noopener">politique de confidentialité</a>. Version courte : aucune collecte de données, aucune analyse, aucun compte — toutes les données sont stockées localement sur votre appareil.</div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <span lang="en">© 2026 Nick Khapatniukovskyi · <a href="https://kalapyha.github.io/privacy-policy/">Privacy Policy</a></span>
+    <span lang="fr">© 2026 Nick Khapatniukovskyi · <a href="https://kalapyha.github.io/privacy-policy/">Politique de confidentialité</a></span>
+  </footer>
+
+  <script>
+    const EMAIL = "n.hapatnyukovsky@gmail.com";
+
+    function buildMailto() {
+      const lang = document.body.classList.contains("fr") ? "fr" : "en";
+
+      const subject = lang === "fr"
+        ? "Soutien — Application"
+        : "App Support";
+
+      const bodyEn = [
+        "Hi,",
+        "",
+        "I'm writing about: [briefly describe the issue or request]",
+        "",
+        "Steps to reproduce (if a bug):",
+        "1. ",
+        "2. ",
+        "3. ",
+        "",
+        "Expected: ",
+        "Actual: ",
+        "",
+        "--- Device info (please confirm) ---",
+        "Device: [e.g., iPhone 15 Pro]",
+        "iOS version: [e.g., iOS 17.4]",
+        "App version: [shown on About screen]",
+        "",
+        "(Feel free to attach a screenshot or screen recording.)",
+        "",
+        "Thanks!",
+      ].join("\n");
+
+      const bodyFr = [
+        "Bonjour,",
+        "",
+        "Je vous écris au sujet de : [décrivez brièvement le problème ou la demande]",
+        "",
+        "Étapes pour reproduire (s'il s'agit d'un bogue) :",
+        "1. ",
+        "2. ",
+        "3. ",
+        "",
+        "Attendu : ",
+        "Réel : ",
+        "",
+        "--- Informations sur l'appareil (veuillez confirmer) ---",
+        "Appareil : [ex. iPhone 15 Pro]",
+        "Version iOS : [ex. iOS 17.4]",
+        "Version de l'application : [affichée dans l'écran À propos]",
+        "",
+        "(N'hésitez pas à joindre une capture d'écran ou un enregistrement.)",
+        "",
+        "Merci !",
+      ].join("\n");
+
+      const body = lang === "fr" ? bodyFr : bodyEn;
+      return `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    function refreshContactLinks() {
+      document.querySelectorAll(".button").forEach((btn) => {
+        btn.href = buildMailto();
+      });
+    }
+
+    function toggleLang() {
+      document.body.classList.toggle("fr");
+      const link = document.getElementById("langLink");
+      link.textContent = document.body.classList.contains("fr") ? "English" : "Français";
+      refreshContactLinks();
+    }
+
+    // Auto-detect French browser language
+    if ((navigator.language || "").toLowerCase().startsWith("fr")) {
+      document.body.classList.add("fr");
+      document.getElementById("langLink").textContent = "English";
+    }
+    refreshContactLinks();
+  </script>
+</body>
+</html>
